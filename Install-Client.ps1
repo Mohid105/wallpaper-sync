@@ -43,7 +43,8 @@ if (Test-Path $main) { & $main -ConfigUrl "$base/config.json" }
 '@ -replace '__RAWBASE__', $RawBase
 Set-Content -Path (Join-Path $dir 'Run.ps1') -Value $runner -Encoding UTF8
 
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument (
+$psExe  = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
+$action = New-ScheduledTaskAction -Execute $psExe -Argument (
     "-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$dir\Run.ps1`"")
 $triggers = @(
     New-ScheduledTaskTrigger -AtLogOn
