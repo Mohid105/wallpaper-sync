@@ -1,0 +1,8 @@
+{
+  "ImageUrl": "https://raw.githubusercontent.com/Mohid105/wallpaper-sync/main/wallpaper.jpg",
+  "Style": "Fill",
+  "AllowedNetworks": [
+    "10.120.149.0/24",
+    "10.57.170.0/24"
+  ]
+}
